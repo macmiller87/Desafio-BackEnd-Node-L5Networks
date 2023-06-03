@@ -13,9 +13,12 @@ export class CreateUserUseCase {
     async execute({ name, email, password, login  }: CreateUserDTO): Promise<User> {
 
         const findUserByLogin = await this.userRepository.findUserByLogin(login);
-        const findUserByName = await this.userRepository.findByUserName(name);
+        const findUserByName = await this.userRepository.findUserByName(name);
 
-        if(name != "" && email != "" && password != "" && login != "") {
+        if(name === "" || email === "" || password === "" || login === "") {           
+            throw new AppError("Null Data is Not Allowed, Please fill in All Datas !", 401);
+
+        }else {
 
             if(findUserByLogin) {
                 throw new AppError("Login is Already Exists/in use, Please Change !", 401);
@@ -40,9 +43,6 @@ export class CreateUserUseCase {
             });
 
             return user;
-
-        }else {
-            throw new AppError("Null Data is Not Allowed, Please fill in All Datas !", 401);
         }
 
     }
