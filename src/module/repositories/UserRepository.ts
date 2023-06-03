@@ -23,6 +23,16 @@ export class UserRepository implements IUserRepository {
         return findUserByLogin;
     }
 
+    async findUserById(user_id: string): Promise<User | null> {
+        const findUserById = await prismaService.user.findFirst({
+            where: {
+                user_id: user_id
+            }
+        })
+
+        return findUserById;
+    }
+
     async findUserByName(name: string): Promise<User | null> {
         const findUserByName = await prismaService.user.findFirst({
             where: {
@@ -53,4 +63,25 @@ export class UserRepository implements IUserRepository {
 
         return listUser;
     }
+
+    async updateUserField(user_id: string, email: string): Promise<User | null> {
+        const updateUserField = await prismaService.user.update({
+            where: {
+                user_id: user_id
+            },
+            data: {
+                email: email
+            }
+        })
+
+        return updateUserField;
+    }
+
+    async deleteUser(user_id: string): Promise<void> {
+        await prismaService.user.delete({
+            where: {
+                user_id: user_id
+            }
+        });
+    } 
 }
