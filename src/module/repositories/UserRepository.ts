@@ -23,13 +23,34 @@ export class UserRepository implements IUserRepository {
         return findUserByLogin;
     }
 
-    async findByUserName(name: string): Promise<User | null> {
-        const findByUserName = await prismaService.user.findFirst({
+    async findUserByName(name: string): Promise<User | null> {
+        const findUserByName = await prismaService.user.findFirst({
             where: {
                 name: name
             }
         });
 
-        return findByUserName;
+        return findUserByName;
+    }
+
+    async findUserByEmail(email: string): Promise<User | null> {
+        const findUserByEmail = await prismaService.user.findFirst({
+            where: {
+                email: email
+            }
+        });
+
+        return findUserByEmail;
+    }
+
+    async listUser(name: string, email: string): Promise<User |null> {
+        const listUser = await prismaService.user.findFirst({
+            where: {
+                name: name,
+                email: email
+            }
+        });
+
+        return listUser;
     }
 }

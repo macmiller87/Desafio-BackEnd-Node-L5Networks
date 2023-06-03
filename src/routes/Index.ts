@@ -1,6 +1,7 @@
+import { createUserRoute, listUserRoute } from "@routes/Users.routes";
 import { Router } from "express";
-import { CreateUserRoute } from "@routes/Users.routes";
 
 export const routes = Router();
 
-routes.use("/createUser", CreateUserRoute);
+routes.use("/createUser", createUserRoute);
+routes.use("/listUser", listUserRoute);
