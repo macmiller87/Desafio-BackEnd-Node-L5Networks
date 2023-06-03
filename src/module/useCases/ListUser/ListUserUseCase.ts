@@ -1,12 +1,11 @@
-import { UserRepository } from "@module/repositories/UserRepository";
+import { IUserRepository } from "@module/repositories/implementation-IUserRepository/IUserRepository";
 import { AppError } from "@utils/error/AppError";
 import { User } from "@prisma/client";
 import { inject, injectable } from "tsyringe";
-
 @injectable()
 export class ListUserUseCase {
 
-    constructor(@inject("UserRepository") private userRepository: UserRepository) {}
+    constructor(@inject("UserRepository") private userRepository: IUserRepository) {}
 
     async execute(name: string, email: string): Promise<User | null |undefined> {
 
@@ -35,7 +34,6 @@ export class ListUserUseCase {
             }
 
         }
-
     }
 
 }
