@@ -16,13 +16,13 @@
 
 - Neste Desafio foi proposto construir uma API em Nodejs/Typescript com 7 end-points, sendo eles: 
 
-###### `Post` para criar um usuário.
-###### `Get` para pesquisar/listar um usuário.
-###### `Patch` para atualizar um campo de cadastro do usuário.
-###### `Delete` para deletar um usuário.
-###### `Get` para pesquisar um usuário via `API publica do Github`.
-###### `Post` para ser possível fazer upload de imagem para o usuário.
-###### `Get` para ser possível fazer download da imagem anteriormente feito upload, para o usuário.
+##### `Post` para criar um usuário.
+##### `Get` para pesquisar/listar um usuário.
+##### `Patch` para atualizar um campo de cadastro do usuário.
+##### `Delete` para deletar um usuário.
+##### `Get` para pesquisar um usuário via `API publica do Github`.
+##### `Post` para ser possível fazer upload de imagem para o usuário.
+##### `Get` para ser possível fazer download da imagem anteriormente feito upload, para o usuário.
 
 - OBS: O end-point para download, ainda não foi desenvolvido.
 
