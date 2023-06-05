@@ -1,7 +1,7 @@
 import { IUserRepository } from "@module/repositories/implementation-IUserRepository/IUserRepository";
 import { CreateUserDTO } from "@module/dtos/UserDTO";
 import { prismaService } from "@database/PrismaService";
-import { User } from "@prisma/client";
+import { User, UserImage } from "@prisma/client";
 
 export class UserRepository implements IUserRepository {
 
@@ -84,4 +84,15 @@ export class UserRepository implements IUserRepository {
             }
         });
     } 
+
+    async uploadUserImages(user_id: string, image_name: string): Promise<UserImage> {
+        const userImage = await prismaService.userImage.create({
+            data: {
+                user_id,
+                image_name
+            }
+        });
+
+        return userImage;
+    }
 }

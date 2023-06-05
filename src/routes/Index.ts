@@ -1,10 +1,12 @@
+
+import { userRoutes, searchUsersByAPIGithubRoute, uploadUserImagesRoute } from "@routes/Users.routes";
 import { Router } from "express";
-import { createUserRoute, listUserRoute, updateUserFieldRoute, deleteUserRoute, SearchUsersByAPIGithubRoute } from "@routes/Users.routes";
 
 export const routes = Router();
 
-routes.use("/createUser", createUserRoute);
-routes.use("/listUser", listUserRoute);
-routes.use("/updateUserField/", updateUserFieldRoute);
-routes.use("/deleteUser/", deleteUserRoute);
-routes.use("/SearchUsersByAPIGithub/", SearchUsersByAPIGithubRoute);
+routes.use("/createUser", userRoutes);
+routes.use("/listUser", userRoutes);
+routes.use("/updateUserField/", userRoutes);
+routes.use("/deleteUser/", userRoutes);
+routes.use("/SearchUsersByAPIGithub/", searchUsersByAPIGithubRoute);
+routes.use("/userUpload/", uploadUserImagesRoute);

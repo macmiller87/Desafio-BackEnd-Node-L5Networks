@@ -11,10 +11,18 @@ datasource db {
 }
 
 model User {
-  user_id   String   @id @default(uuid())
+  user_id   String      @id @default(uuid())
   name      String
   email     String
   password  String
-  login     String   @unique
-  createdAt DateTime @default(now())
+  login     String      @unique
+  createdAt DateTime    @default(now())
+  UserImage UserImage[]
+}
+
+model UserImage {
+  id         Int    @id @default(autoincrement())
+  user_id    String
+  image_name String
+  user       User   @relation(fields: [user_id], references: [user_id], onDelete: Cascade)
 }
