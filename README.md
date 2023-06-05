@@ -49,11 +49,11 @@ Obs: (O campo `user_id` e `createdAt`, são gerados automaticamente pelo PrismaO
 
 #### UpdateUserField: Patch - `/updateUserField/`.
 
-- A rota deve receber pelo cabeçario de requisição `http` o `user_id` do usuário a ser atualizado, obs: esse user_id tem que ser passado pelo parametro `query` da ferramenta que trabalha com requisições `http`, ex: (Insominia, Postman etc ..), e pelo corpo da requisição o `email` no formato de um objeto `json`, propriedade a ser atualizada no `usuário` , essa atualização só pode acontecer caso o parâmetros `user_id` seja válidado.
+- A rota deve receber pelo cabeçario de requisição `http` o `user_id` do usuário a ser atualizado, obs: esse user_id tem que ser passado pelo parâmetro `query` da ferramenta que trabalha com requisições `http`, ex: (Insominia, Postman etc ..), e pelo corpo da requisição o `email` no formato de um objeto `json`, propriedade a ser atualizada no `usuário` , essa atualização só pode acontecer caso o parâmetros `user_id` seja válidado.
 
 #### DeleteUser: Delete - `/deleteUser/`.
 
-- A rota deve receber pelo cabeçario de requisição `http` o `user_id` do usuário a ser deletado, obs: esse user_id tem que ser passado pelo parametro `query` da ferramenta que trabalha com requisições `http`, ex: (Insominia, Postman etc ..).
+- A rota deve receber pelo cabeçario de requisição `http` o `user_id` do usuário a ser deletado, obs: esse user_id tem que ser passado pelo parâmetro `query` da ferramenta que trabalha com requisições `http`, ex: (Insominia, Postman etc ..).
 
 #### SearchUsersByAPIGithub: Get - `/searchUsersByAPIGithub/`.
 
@@ -61,7 +61,7 @@ Obs: (O campo `user_id` e `createdAt`, são gerados automaticamente pelo PrismaO
 
 #### UploadUserImages: Post - `/userUpload/`.
 
-- A rota deve receber pelo cabeçario de requisição `http` o `user_id` de um usuário valido, obs: esse user_id tem que ser passado pelo parametro `query` da ferramenta que trabalha com requisições `http`, ex: (Insominia, Postman etc ..), e pela propriedade/parametro `Multipart Form`, da ferramenta que trabalha com requisições `http`, ex: (Insominia, Postman etc ..), `a imagem a ser feito o upload`.
+- A rota deve receber pelo cabeçario de requisição `http` o `user_id` de um usuário valido, obs: esse user_id tem que ser passado pelo parâmetro `query` da ferramenta que trabalha com requisições `http`, ex: (Insominia, Postman etc ..), e pela propriedade/parâmetro `Multipart Form`, da ferramenta que trabalha com requisições `http`, ex: (Insominia, Postman etc ..), o campo com o parametro preenchido `userImages` e `a imagem a ser feito o upload`.
 
 ## Para rodar essa aplicação siga os seguintes passos:
 
