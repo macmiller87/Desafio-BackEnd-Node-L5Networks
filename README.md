@@ -70,3 +70,7 @@ Obs: (O campo `user_id` e `createdAt`, são gerados automaticamente pelo PrismaO
 - Com o `Nodejs` e o `Yarn ou Npm` instalados, Na sua IDE preferida, abra o terminal do `git`, e execute o seguinte comando => `yarn ou npm i`, para baixar as dependências da aplicação.
 - Para rodar o projeto execute o seguinte comando => `yarn dev ou Npm dev`.
 - Para testar o funcional da aplicação será necessário o uso das ferramentas `Insomnia ou Postman` e criar as rotas da aplicação citadas acima.
+
+## Para rodar a ferramenta de Interface de visualização do `Banco de Dados do Prisma`.
+
+- Com a aplicação já startada .... abra uma 2 guia/aba do seu terminal e digite `npx prisma studio`.
